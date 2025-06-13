@@ -7,49 +7,65 @@
   <meta name="keywords" content="Learn English, English lessons, English videos, Abuyaseen, grammar, speaking, vocabulary, ESL, English teacher" />
   <meta name="author" content="English with Abuyaseen" />
   <title>English with Abuyaseen</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="scripts.js"></script>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f0f4f8;
+      background-color: #f4f9ff;
       color: #333;
-      overflow-x: hidden;
     }
-
-    header {
-      background-color: #005f73;
+    nav {
+      background-color: #023047;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
       color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    header {
       text-align: center;
       padding: 2rem;
-      animation: fadeIn 2s ease-in-out;
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover no-repeat;
+      color: white;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.4);
     }
-
     header h1 {
       margin: 0;
       font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
     }
-
-    .intro {
-      text-align: center;
+    section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
-      font-size: 1.2rem;
-      animation: slideIn 1s ease-in-out;
     }
-
+    .hero-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
     .videos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
     }
-
     .video {
       background: white;
       border-radius: 10px;
@@ -57,46 +73,75 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-
     .video:hover {
       transform: scale(1.03);
     }
-
     iframe {
       width: 100%;
       height: 200px;
       border: none;
     }
-
-    footer {
+    .pagination {
       text-align: center;
-      padding: 2rem;
-      background-color: #005f73;
-      color: white;
+      margin-top: 2rem;
     }
-
+    .pagination button {
+      margin: 0 5px;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #219ebc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .pagination button:hover {
+      background-color: #126782;
+    }
+    footer {
+      background-color: #023047;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
-    @keyframes slideIn {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#videos">Videos</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
     <h1>English with Abuyaseen</h1>
   </header>
 
-  <section class="intro">
+  <section id="home">
+    <img src="https://images.unsplash.com/photo-1584697964403-c24b0f6f7d12" class="hero-image" alt="Learning English" />
     <p>Welcome to "English with Abuyaseen" — your destination for learning English in a simple and engaging way! Explore grammar tips, pronunciation exercises, speaking practice, and vocabulary expansion through our video series. Perfect for all levels.</p>
   </section>
 
-  <section class="videos" id="video-section">
-    <!-- Videos will be injected by JavaScript -->
+  <section id="videos">
+    <h2>Watch Our Latest Videos</h2>
+    <div class="videos" id="video-container"></div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Abuyaseen is passionate about helping learners around the world master English through practical tips, video tutorials, and real-life language application. Whether you're a beginner or looking to refine your fluency, this platform is for you!</p>
+    <img src="https://images.unsplash.com/photo-1600195077073-4a7c9fd2d93f" class="hero-image" alt="English Books" />
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out for collaboration or feedback: <strong>abuyaseen.english@gmail.com</strong></p>
+    <img src="https://images.unsplash.com/photo-1588776814546-ec65bbaae1f7" class="hero-image" alt="Contact Image" />
   </section>
 
   <footer>
@@ -106,15 +151,43 @@
   <script>
     const videoIds = [
       "dQw4w9WgXcQ", "xvFZjo5PgG0", "kXYiU_JCYtU", "3JZ_D3ELwOQ", "l482T0yNkeo",
+      "ZZ5LpwO-An4", "eBGIQ7ZuuiU", "60ItHLz5WEA", "sNPnbI1arSE", "QH2-TGUlwu4"
+      // Add more if needed
     ];
 
-    const container = document.getElementById("video-section");
-    videoIds.forEach(id => {
-      const div = document.createElement("div");
-      div.className = "video";
-      div.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>`;
-      container.appendChild(div);
-    });
+    const container = document.getElementById("video-container");
+    const pagination = document.getElementById("pagination");
+    const videosPerPage = 5;
+    let currentPage = 1;
+
+    function showVideos(page) {
+      container.innerHTML = "";
+      let start = (page - 1) * videosPerPage;
+      let end = start + videosPerPage;
+      videoIds.slice(start, end).forEach(id => {
+        const div = document.createElement("div");
+        div.className = "video";
+        div.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>`;
+        container.appendChild(div);
+      });
+    }
+
+    function showPagination() {
+      pagination.innerHTML = "";
+      let totalPages = Math.ceil(videoIds.length / videosPerPage);
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.onclick = () => {
+          currentPage = i;
+          showVideos(currentPage);
+        };
+        pagination.appendChild(btn);
+      }
+    }
+
+    showVideos(currentPage);
+    showPagination();
   </script>
 </body>
 </html>
