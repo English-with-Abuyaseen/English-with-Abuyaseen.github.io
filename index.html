@@ -39,11 +39,8 @@
     header {
       text-align: center;
       padding: 2rem;
-      background: url('https://cdn.pixabay.com/photo/2016/11/29/04/17/adult-1868750_1280.jpg') center/cover no-repeat;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
       color: white;
-      background-size: cover;
-      background-blend-mode: darken;
-      background-color: rgba(0, 0, 0, 0.4);
     }
     header h1 {
       margin: 0;
@@ -55,11 +52,9 @@
       max-width: 1000px;
       margin: auto;
     }
-    .hero-image {
+    .hero-svg {
       width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
+      height: 300px;
       margin-bottom: 1.5rem;
     }
     .highlight-boxes {
@@ -143,7 +138,16 @@
   </header>
 
   <section id="home">
-    <img src="https://cdn.pixabay.com/photo/2017/03/01/01/13/learn-2106816_1280.jpg" class="hero-image" alt="Learning English" />
+    <svg class="hero-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00b4d8; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#0077b6; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="800" height="300" fill="url(#grad1)" rx="20" />
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="32" fill="white" font-family="Segoe UI">Learn English Every Day!</text>
+    </svg>
     <p>Welcome to "English with Abuyaseen" — your destination for learning English in a simple and engaging way! Explore grammar tips, pronunciation exercises, speaking practice, and vocabulary expansion through our video series. Perfect for all levels.</p>
     <div class="highlight-boxes">
       <div class="highlight-box">
@@ -174,13 +178,11 @@
   <section id="about">
     <h2>About</h2>
     <p>Abuyaseen is passionate about helping learners around the world master English through practical tips, video tutorials, and real-life language application. Whether you're a beginner or looking to refine your fluency, this platform is for you!</p>
-    <img src="https://cdn.pixabay.com/photo/2016/03/23/18/36/book-1276778_1280.jpg" class="hero-image" alt="English Books" />
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Feel free to reach out for collaboration or feedback: <strong>abuyaseen.english@gmail.com</strong></p>
-    <img src="https://cdn.pixabay.com/photo/2016/11/21/16/03/email-1846274_1280.jpg" class="hero-image" alt="Contact Image" />
   </section>
 
   <footer>
