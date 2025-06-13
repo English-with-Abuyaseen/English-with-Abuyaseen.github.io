@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn English with Abuyaseen through free video lessons, tips, and engaging content. Improve your grammar, speaking, and vocabulary with our expert guidance." />
+  <meta name="keywords" content="Learn English, English lessons, English videos, Abuyaseen, grammar, speaking, vocabulary, ESL, English teacher" />
+  <meta name="author" content="English with Abuyaseen" />
+  <title>English with Abuyaseen</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.2rem;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .video {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .video:hover {
+      transform: scale(1.03);
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #005f73;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>English with Abuyaseen</h1>
+  </header>
+
+  <section class="intro">
+    <p>Welcome to "English with Abuyaseen" — your destination for learning English in a simple and engaging way! Explore grammar tips, pronunciation exercises, speaking practice, and vocabulary expansion through our video series. Perfect for all levels.</p>
+  </section>
+
+  <section class="videos" id="video-section">
+    <!-- Videos will be injected by JavaScript -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 English with Abuyaseen. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const videoIds = [
+      "dQw4w9WgXcQ", "xvFZjo5PgG0", "kXYiU_JCYtU", "3JZ_D3ELwOQ", "l482T0yNkeo", 
+      "ZZ5LpwO-An4", "eBGIQ7ZuuiU", "60ItHLz5WEA", "sNPnbI1arSE", "QH2-TGUlwu4",
+      "bCZn23Z1y1Y", "CevxZvSJLk8", "RgKAFK5djSk", "OPf0YbXqDm0", "0KSOMA3QBU0",
+      "2vjPBrBU-TM", "JGwWNGJdvx8", "fLexgOxsZu0", "YQHsXMglC9A", "kJQP7kiw5Fk",
+      "6Ejga4kJUts", "ru0K8uYEZWw", "y6120QOlsfU", "uelHwf8o7_U", "nfs8NYg7yQM",
+      "pRpeEdMmmQ0", "L_jWHffIx5E", "GxBSyx85Kp8", "tVj0ZTS4WF4", "YqeW9_5kURI",
+      "o1tj2zJ2Wvg", "6ZfuNTqbHE8", "HgzGwKwLmgM", "tAGnKpE4NCI", "JkK8g6FMEXE",
+      "9bZkp7q19f0", "NF-kLy44Hls", "7wtfhZwyrcc", "VbfpW0pbvaU", "kXYiU_JCYtU",
+      "TcMBFSGVi1c", "8UVNT4wvIGY", "aJOTlE1K90k", "0KSOMA3QBU0", "RgKAFK5djSk",
+      "ZbZSe6N_BXs", "xTlNMmZKwpA", "mWRsgZuwf_8", "hT_nvWreIhg", "OPf0YbXqDm0",
+      "ktvTqknDobU", "uelHwf8o7_U", "e-ORhEE9VVg", "JGwWNGJdvx8", "VbfpW0pbvaU",
+      "fRh_vgS2dFE", "wTcNtgA6gHs", "fLexgOxsZu0", "QH2-TGUlwu4", "tVj0ZTS4WF4"
+    ];
+
+    const container = document.getElementById("video-section");
+    videoIds.forEach(id => {
+      const div = document.createElement("div");
+      div.className = "video";
+      div.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>`;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
