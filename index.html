@@ -16,6 +16,7 @@
       margin: 0;
       background-color: #f4f9ff;
       color: #333;
+      scroll-behavior: smooth;
     }
     nav {
       background-color: #023047;
@@ -60,6 +61,26 @@
       object-fit: cover;
       border-radius: 10px;
       margin-bottom: 1.5rem;
+    }
+    .highlight-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .highlight-box {
+      background: #e0f7fa;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .highlight-box:hover {
+      transform: translateY(-5px);
+    }
+    .highlight-box h3 {
+      margin-top: 0;
+      color: #0277bd;
     }
     .videos {
       display: grid;
@@ -124,6 +145,24 @@
   <section id="home">
     <img src="https://images.unsplash.com/photo-1584697964403-c24b0f6f7d12" class="hero-image" alt="Learning English" />
     <p>Welcome to "English with Abuyaseen" — your destination for learning English in a simple and engaging way! Explore grammar tips, pronunciation exercises, speaking practice, and vocabulary expansion through our video series. Perfect for all levels.</p>
+    <div class="highlight-boxes">
+      <div class="highlight-box">
+        <h3>Daily English Practice</h3>
+        <p>Boost your confidence with quick, daily video challenges to practice common English phrases.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Grammar Simplified</h3>
+        <p>Understand English grammar through real-life examples and easy-to-follow explanations.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Build Your Vocabulary</h3>
+        <p>Learn essential vocabulary grouped by topics, with pronunciation and usage tips.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Interactive Lessons</h3>
+        <p>Participate in quizzes and activities to reinforce your learning in a fun way.</p>
+      </div>
+    </div>
   </section>
 
   <section id="videos">
@@ -152,7 +191,6 @@
     const videoIds = [
       "dQw4w9WgXcQ", "xvFZjo5PgG0", "kXYiU_JCYtU", "3JZ_D3ELwOQ", "l482T0yNkeo",
       "ZZ5LpwO-An4", "eBGIQ7ZuuiU", "60ItHLz5WEA", "sNPnbI1arSE", "QH2-TGUlwu4"
-      // Add more if needed
     ];
 
     const container = document.getElementById("video-container");
